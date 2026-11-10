@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIKR | Bicycle builds & Gallery</title>
+    <link rel="icon" type="image/png" href="/GB.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Xmind:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Xmind';
+        background:
+          url('https://www.transparenttextures.com/patterns/subtle-dots.png'),
+          linear-gradient(180deg, #020a1d 18%, #09318d, #196dda, #f5f5f5);
+        color: white;
+      }
+
+      /* BANNER */
+      .banner {
+        background:
+          url('https://www.transparenttextures.com/patterns/subtle-dots.png'),
+          linear-gradient(#8a2b5f 10%, #fd91cc);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 16px 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        color: #ffffff;
+      }
+
+      .banner-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2px;
+        transform: none;
+      }
+
+      .banner p {
+        font-size: 14px;
+        letter-spacing: 3px;
+        margin: 0;
+      }
+
+      .banner h1 {
+        font-size: 54px;
+        margin: 2px 0;
+      }
+
+      .banner h3 {
+        font-weight: normal;
+        margin-top: 0;
+      }
+
+      /* NAVBAR */
+      .navbar {
+        background-color: #01030860;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 12px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 4px 0px #01030860;
+      }
+
+      .logo {
+        font-size: 60px;
+        font-weight: bold;
+      }
+
+      .logo span {
+        color: #fd91cc;
+      }
+
+      .menu a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+        font-size: 25px;
+        margin-right: 5px;
+      }
+
+      .menu a:hover {
+        color: #fd91cc;
+        transition: 0.2s;
+      }
+
+      /* CONTAINER */
+      .container {
+        width: 1850px;
+        max-width: 100%;
+        margin: auto;
+      }
+
+      section {
+        padding: 5px 2px;
+      }
+
+      .judul {
+        font-size: 85px;
+        margin-left: -3px;
+        margin-top: -10px;
+        margin-bottom: -25px;
+      }
+
+      .subjudul {
+        color: #ffffff;
+        font-size: 20px;
+        margin-top: -18px;
+        margin-bottom: 5px;
+      }
+
+      hr.solid {
+        border: none;
+        height: 2px;
+        background-color: #ffffff;
+        width: 100%;
+      }
+
+      /* BIKE TYPES */
+      .builds {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+      }
+
+      .card {
+        background-color: #ffffff;
+        color: #000000;
+      }
+
+      .card img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        transition: 0.2s;
+      }
+
+      .card a {
+        display: block;
+        overflow: hidden;
+      }
+
+      .card a:hover img {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+
+      .card-info {
+        padding: 6px 6px;
+      }
+
+      .card-info h3 {
+        margin-top: 0;
+        margin-bottom: 0px;
+      }
+
+      .card-info p {
+        color: #020202;
+        font-size: 14px;
+        line-height: 1;
+      }
+
+      .card-info a {
+        color: #fd91cc;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .card-info a:hover {
+        color: #8a2b5f;
+        transition: 0.2s;
+      }
+
+      /* GALLERY */
+      .gallery {
+        display: flex;
+        gap: 5px;
+        overflow-x: auto;
+        padding: 5px 2px 15px;
+        scroll-behavior: smooth;
+      }
+
+      .gallery img {
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+        transition: 0.2s;
+      }
+
+      .gallery a {
+        display: block;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .gallery a:hover img {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+
+      /* COMPONENTS */
+      .components {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+      }
+
+      .component-box {
+        background-color: #ffffff;
+        color: #000000;
+        padding: 6px 6px;
+      }
+
+      .component-box h3 {
+        color: #000000;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      .component-box p {
+        color: #000000;
+        font-size: 14px;
+        line-height: 1;
+      }
+
+      .components a {
+        color: #fd91cc;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .components a:hover {
+        color: #8a2b5f;
+        transition: 0.2s;
+      }
+
+      /* VIDEO */
+      .ytvideo iframe {
+        display: block;
+        width: 100%;
+        height: 1038px;
+        border: 0;
+        margin: auto;
+      }
+
+      /* MUSIC */
+      .spotify iframe {
+        display: block;
+        width: 100%;
+        height: 400px;
+        border: 0;
+        margin: auto;
+      }
+
+      /* CONTACT */
+      .contact {
+        color: #ffffff;
+        width: 100%;
+        max-width: 1350px;
+        margin: 0 auto 35px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      ::placeholder {
+        color: #00000070;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 16px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ffffff;
+        background-color: white;
+        box-sizing: border-box;
+        font-family: 'Xmind';
+      }
+
+      .form-group textarea {
+        resize: vertical;
+      }
+
+      .form-button {
+        background-color: #fd91cc;
+        color: white;
+        font-size: 18px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .form-button:hover {
+        background-color: #8a2b5f;
+      }
+
+      /* FOOTER */
+      .footer {
+        background: url('https://www.transparenttextures.com/patterns/subtle-dots.png')
+          #020a1d;
+        font-family: 'Xmind';
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .copyright {
+        font-size: 19px;
+        margin: 0;
+      }
+
+      .credit {
+        font-size: 15px;
+        display: block;
+        margin: 0;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 700px) {
+        .banner {
+          flex-direction: column;
+          align-items: center;
+          padding: 25px 5%;
+        }
+
+        .banner-text {
+          width: 100%;
+          align-items: center;
+          text-align: center;
+        }
+
+        .banner p {
+          font-size: 11px;
+          letter-spacing: 2px;
+        }
+
+        .banner h1 {
+          font-size: 38px;
+        }
+
+        .banner h3 {
+          font-size: 16px;
+        }
+        /* NAVBAR */
+        .navbar {
+          flex-direction: column;
+          gap: 8px;
+          padding: 8px 5px;
+        }
+
+        .logo {
+          font-size: 38px;
+        }
+
+        .menu {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          text-align: center;
+          gap: 5px;
+        }
+
+        .menu a {
+          display: inline-block;
+          font-size: 14px;
+          margin: 4px;
+        }
+
+        /* CONTAINER */
+        .container {
+          width: 90%;
+          max-width: 100%;
+        }
+
+        section {
+          padding: 5px 0;
+        }
+
+        .judul {
+          font-size: 42px;
+          margin-left: 0;
+          margin-top: 0;
+          margin-bottom: 5px;
+        }
+
+        .subjudul {
+          font-size: 15px;
+          margin-top: 0;
+          margin-bottom: 10px;
+        }
+
+        /* BIKE TYPES */
+        .builds {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .card img {
+          height: 250px;
+        }
+
+        /* GALLERY */
+        .gallery {
+          gap: 5px;
+          overflow-x: auto;
+        }
+
+        .gallery img {
+          width: 80vw;
+          height: 80vw;
+          max-width: 500px;
+          max-height: 500px;
+          object-fit: cover;
+        }
+
+        /* COMPONENTS */
+        .components {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        /* VIDEO */
+        .ytvideo iframe {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 16 / 9;
+        }
+
+        /* MUSIC */
+        .spotify iframe {
+          width: 100%;
+          height: 400px;
+        }
+
+        /* CONTACT */
+        .contact {
+          width: 100%;
+          padding: 0;
+        }
+
+        /* FOOTER */
+        .copyright {
+          font-size: 14px;
+        }
+
+        .credit {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- BANNER -->
+    <div class="banner" id="home">
+      <div class="banner-text">
+        <p>BICYCLE BUILDS & GALLERY</p>
+        <h1>BIKR.</h1>
+        <p>Every bike has its own story.</p>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="navbar">
+      <div class="logo">BIK<span>R.</span></div>
+      <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#builds">Bike Types</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#components">Components</a>
+        <a href="#video">Video</a>
+        <a href="#music">Music</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- BIKE TYPES -->
+      <section id="builds">
+        <h2 class="judul">BIKE TYPES</h2>
+        <p class="subjudul">Explore most known types of bicycles.</p>
+
+        <div class="builds">
+          <div class="card">
+            <a href="HMTB.png" target="_blank">
+              <img src="HMTB.png" alt="Hardtail MTB" />
+            </a>
+
+            <div class="card-info">
+              <h3>Hardtail MTB</h3>
+              <p>
+                A hardtail mountain bike (MTB) is an off-road bicycle that
+                features a suspension fork on the front wheel and a rigid,
+                un-suspended frame in the rear.
+              </p>
+              <a href="#components">View Components &#8617;</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <a href="FMTB.png" target="_blank">
+              <img src="FMTB.png" alt="Full Suspension" />
+            </a>
+
+            <div class="card-info">
+              <h3>Full Suspension MTB</h3>
+              <p>
+                A full-suspension mountain bike is a bicycle equipped with both
+                a front suspension fork and a rear shock absorber connected to a
+                mechanical frame linkage.
+              </p>
+              <a href="#components">View Components &#8617;</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <a href="GB.png" target="_blank">
+              <img src="GB.png" alt="Gravel Bike" />
+            </a>
+
+            <div class="card-info">
+              <h3>Gravel Bike</h3>
+              <p>
+                A gravel bike is a drop-bar bicycle designed to ride across a
+                mix of paved roads, unpaved gravel, dirt tracks, and light
+                trails.
+              </p>
+              <a href="#components">View Components &#8617;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery">
+        <h2 class="judul">CYCLING GALLERY</h2>
+        <p class="subjudul">
+          Pictures of cool built bikes and fun moments to please our eyes.
+        </p>
+
+        <div class="gallery">
+          <a href="G1.jpg" target="_blank">
+            <img src="G1.jpg" alt="Bike Photo 1" />
+          </a>
+
+          <a href="G2.jpg" target="_blank">
+            <img src="G2.jpg" alt="Bike Photo 2" />
+          </a>
+
+          <a href="G3.jpg" target="_blank">
+            <img src="G3.jpg" alt="Bike Photo 3" />
+          </a>
+
+          <a href="G4.jpg" target="_blank">
+            <img src="G4.jpg" alt="Bike Photo 4" />
+          </a>
+
+          <a href="G5.jpg" target="_blank">
+            <img src="G5.jpg" alt="Bike Photo 5" />
+          </a>
+
+          <a href="G6.jpg" target="_blank">
+            <img src="G6.jpg" alt="Bike Photo 6" />
+          </a>
+        </div>
+      </section>
+
+      <!-- COMPONENTS -->
+      <section id="components">
+        <h2 class="judul">BIKE COMPONENTS</h2>
+        <p class="subjudul">
+          Get to know all the essential parts on your bicycle.
+        </p>
+
+        <div class="components">
+          <div class="component-box">
+            <h3>Frame</h3>
+            <p>
+              A bicycle frame is the main component of a bicycle, onto which
+              wheels and other components are fitted. The modern and most common
+              frame design for an upright bicycle is based on the safety
+              bicycle, and consists of two triangles.
+            </p>
+            <a
+              href="https://en.wikipedia.org/wiki/Bicycle_frame"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Learn More &#8599;</a
+            >
+          </div>
+
+          <div class="component-box">
+            <h3>Suspension Fork</h3>
+            <p>
+              Bicycle suspension is the system, or systems, used to suspend the
+              rider and bicycle in order to insulate them from the roughness of
+              the terrain. Bicycle suspension is used primarily on mountain
+              bikes.
+            </p>
+            <a
+              href="https://en.wikipedia.org/wiki/Bicycle_suspension"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Learn More &#8599;</a
+            >
+          </div>
+
+          <div class="component-box">
+            <h3>Wheelset</h3>
+            <p>
+              A bicycle wheel is a wheel, most commonly a wire wheel, designed
+              for a bicycle. A pair is often called a wheelset, especially in
+              the context of ready built "off the shelf" performance-oriented
+              wheels.
+            </p>
+            <a
+              href="https://en.wikipedia.org/wiki/Bicycle_wheel"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Learn More &#8599;</a
+            >
+          </div>
+
+          <div class="component-box">
+            <h3>Groupset</h3>
+            <p>
+              A groupset or gruppo (from the Italian for "group", sometimes
+              misspelled grouppo) is a bicycle component manufacturer's
+              organized collection of mechanical parts.
+            </p>
+            <a
+              href="https://en.wikipedia.org/wiki/Groupset"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Learn More &#8599;</a
+            >
+          </div>
+
+          <div class="component-box">
+            <h3>Brakes</h3>
+            <p>
+              A bicycle brake reduces the speed of a bicycle or prevents the
+              wheels from moving. The two main types are: rim brakes and disc
+              brakes. Drum brakes are less common on bicycles.
+            </p>
+            <a
+              href="https://en.wikipedia.org/wiki/Bicycle_brake"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Learn More &#8599;</a
+            >
+          </div>
+
+          <div class="component-box">
+            <h3>Handlebar</h3>
+            <p>
+              A bicycle handlebar is the steering control for bicycles. It is
+              the equivalent of a tiller for vehicles and vessels, as it is most
+              often directly mechanically linked to a pivoting front wheel via a
+              stem which in turn attaches it to the fork.
+            </p>
+            <a
+              href="https://en.wikipedia.org/wiki/Bicycle_handlebar"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Learn More &#8599;</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- VIDEO -->
+      <section id="video">
+        <h2 class="judul">VIDEO</h2>
+        <p class="subjudul">
+          Watch a video about bicycle or cycling. | Bike Maintenance 101 :
+        </p>
+
+        <div class="ytvideo">
+          <iframe
+            src="https://www.youtube.com/embed/VKBNDzCLzK8"
+            title="Bike Maintenance 101"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- MUSIC -->
+      <section id="music">
+        <h2 class="judul">MUSIC</h2>
+        <p class="subjudul">Some music to listen to while cycling.</p>
+
+        <div class="spotify">
+          <iframe
+            src="https://open.spotify.com/embed/playlist/3yKWDt4aefaFfrJ5mtVfqj?utm_source=generator&theme=0&si=f2e34894d851429c"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- CONTACT FORM -->
+      <section id="contact">
+        <h2 class="judul">CONTACT US!</h2>
+        <p class="subjudul">
+          Send us a message if you have any questions, feedback, or suggestions.
+        </p>
+        <hr class="solid" />
+
+        <div class="contact">
+          <form>
+            <div class="form-group">
+              <label for="name">NAME</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">EMAIL</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="name@example.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message-type">MESSAGE TYPE</label>
+              <select id="message-type" required>
+                <option value="">Choose Message Type</option>
+                <option>Critique</option>
+                <option>Feedback</option>
+                <option>Question</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">MESSAGE</label>
+              <textarea
+                id="message"
+                rows="4"
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="form-button">SEND MESSAGE</button>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <!--FOOTER-->
+    <div class="footer">
+      <p class="copyright">COPYRIGHT &copy; 2026 ACHMAD ALFIAN SYAH</p>
+      <p class="credit">
+        A project made for Pemrograman Web 1.<br />
+        #26aintdead
+      </p>
+    </div>
+  </body>
+</html>
