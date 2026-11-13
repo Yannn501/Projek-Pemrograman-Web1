@@ -116,6 +116,13 @@
       margin-bottom: 5px;
     }
 
+    .subjudul2 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-top: -0px;
+      margin-bottom: 5px;
+    }
+
     hr.solid {
       border: none;
       height: 2px;
@@ -242,6 +249,13 @@
     }
 
     /* VIDEO */
+    .video {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
+
     .ytvideo iframe {
       width: 100%;
       height: 800px;
@@ -437,6 +451,12 @@
       }
 
       /* VIDEO */
+      .video {
+        width: 1350px;
+        display: block;
+        margin: auto;
+      }
+
       .ytvideo iframe {
         width: 100%;
         height: auto;
@@ -659,6 +679,7 @@
           <a href="https://en.wikipedia.org/wiki/Bicycle_handlebar" target="_blank" rel="noopener noreferrer">Learn More
             &#8599;</a>
         </div>
+
       </div>
     </section>
 
@@ -667,6 +688,15 @@
       <h2 class="judul">VIDEO</h2>
       <p class="subjudul">
         Watch a video about bicycle or cycling. | Bike Maintenance 101 :
+      </p>
+      <div class="video">
+        <video controls>
+          <source src="Video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <p class="subjudul2">
+        Watch on Youtube
       </p>
 
       <div class="ytvideo">
@@ -678,7 +708,13 @@
     <section id="music">
       <h2 class="judul">MUSIC</h2>
       <p class="subjudul">Some music to listen to while cycling.</p>
+      <div class="audio">
+        <audio controls>
+          <source src="Lagu.mp3" type="audio.mpeg">
+        </audio>
+      </div>
 
+      <p class="subjudul2">Even more music to bless our ears!</p>
       <div class="spotify">
         <iframe
           src="https://open.spotify.com/embed/playlist/3yKWDt4aefaFfrJ5mtVfqj?utm_source=generator&theme=0&si=f2e34894d851429c"
