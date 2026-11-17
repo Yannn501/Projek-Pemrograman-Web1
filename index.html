@@ -19,7 +19,7 @@
 
       body {
         margin: 0;
-        font-family: 'Xmind';
+        font-family: 'Xmind', arial, sans-serif;
         background:
           url('https://www.transparenttextures.com/patterns/subtle-dots.png'),
           linear-gradient(180deg, #020a1d 18%, #09318d, #196dda, #f5f5f5);
@@ -120,7 +120,7 @@
       .subjudul2 {
         color: #ffffff;
         font-size: 20px;
-        margin-top: -0px;
+        margin-top: 2px;
         margin-bottom: 5px;
       }
 
@@ -217,7 +217,7 @@
       .components {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 4px;
+        gap: 5px;
       }
 
       .component-box {
@@ -266,13 +266,14 @@
 
       /* MUSIC */
       .audio {
-        background-color: #ffffff;
-        padding: 10px 0px;
+        background-color: #f1f3f4;
         display: grid;
+        padding: 10px 0px;
+        border-radius: 13px;
         grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
+        gap: 200px;
         width: 100%;
-        margin-bottom: 5px;
+        justify-items: center;
       }
 
       .spotify iframe {
@@ -358,16 +359,17 @@
       }
 
       /* LAPTOP */
-      @media (aspect-ratio: 3/2){
+      @media (aspect-ratio: 3/2) and (min-width: 700px) and (max-width: 1200px) {
         .container {
           width: 90%;
           max-width: 100%;
         }
       }
 
-      /* RESPONSIVE */
+      /* MOBILE */
       @media (max-width: 700px) {
         .banner {
+          display: flex;
           flex-direction: column;
           align-items: center;
           padding: 25px 5%;
@@ -429,21 +431,29 @@
 
         .judul {
           font-size: 42px;
-          margin-left: 0;
+          line-height: 0.85;
+          margin-left: -1px;
           margin-top: 0;
-          margin-bottom: 5px;
+          margin-bottom: -2px;
         }
 
         .subjudul {
           font-size: 15px;
+          line-height: 1;
           margin-top: 0;
-          margin-bottom: 10px;
+          margin-bottom: 5px;
+        }
+
+        .subjudul2 {
+          font-size: 15px;
+          margin-top: 3px;
+          margin-bottom: 5px;
         }
 
         /* BIKE TYPES */
         .builds {
           grid-template-columns: 1fr;
-          gap: 12px;
+          gap: 5px;
         }
 
         .card img {
@@ -467,7 +477,7 @@
         /* COMPONENTS */
         .components {
           grid-template-columns: 1fr;
-          gap: 10px;
+          gap: 5px;
         }
 
         /* VIDEO */
@@ -482,7 +492,7 @@
           grid-template-columns: 1fr;
           gap: 10px;
         }
-  
+
         .spotify iframe {
           width: 100%;
           height: 400px;
@@ -733,11 +743,11 @@
         </p>
         <div class="video">
           <video controls>
-            <source src="Video.mp4" type="video/mp4" />
+            <source src="Bike Maintenance.mp4" type="video/mp4" />
           </video>
         </div>
 
-        <p class="subjudul2">Watch on Youtube</p>
+        <p class="subjudul2">Watch more on Youtube</p>
 
         <div class="ytvideo">
           <iframe
@@ -754,13 +764,13 @@
         <p class="subjudul">Some music to listen to while cycling.</p>
         <div class="audio">
           <audio controls>
-            <source src="Lagu.mp3" type="audio/mpeg" />
+            <source src="Hold On Till May.mp3" type="audio/mpeg" />
           </audio>
           <audio controls>
-            <source src="Lagu.mp3" type="audio/mpeg" />
+            <source src="Props & Mayhem.mp3" type="audio/mpeg" />
           </audio>
           <audio controls>
-            <source src="Lagu.mp3" type="audio/mpeg" />
+            <source src="Dead Clown.mp3" type="audio/mpeg" />
           </audio>
         </div>
 
